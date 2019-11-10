@@ -10,6 +10,7 @@ class CustomFlatButton extends StatelessWidget {
   final Color splashColor;
   final Color borderColor;
   final double borderWidth;
+  final Icon icon;
 
   CustomFlatButton(
       {this.title,
@@ -20,36 +21,69 @@ class CustomFlatButton extends StatelessWidget {
       this.color,
       this.splashColor,
       this.borderColor,
-      this.borderWidth});
+      this.borderWidth,
+      this.icon});
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
-      onPressed: onPressed,
-      color: color,
-      splashColor: splashColor,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 12.0),
-        child: Text(
-          title,
-          softWrap: true,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: textColor,
-            decoration: TextDecoration.none,
-            fontSize: fontSize,
-            fontWeight: fontWeight,
-            fontFamily: "OpenSans",
+    if ( icon != null ) {
+      return FlatButton.icon(
+        onPressed: onPressed,
+        color: color,
+        splashColor: splashColor,
+        icon: icon,
+        label: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12.0),
+          child: Text(
+            title,
+            softWrap: true,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: textColor,
+              decoration: TextDecoration.none,
+              fontSize: fontSize,
+              fontWeight: fontWeight,
+              fontFamily: "OpenSans",
+            ),
           ),
         ),
-      ),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30.0),
-        side: BorderSide(
-          color: borderColor,
-          width: borderWidth,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0),
+          side: BorderSide(
+            color: borderColor,
+            width: borderWidth,
+          ),
         ),
-      ),
-    );
+      );
+    } else {
+      return FlatButton(
+        onPressed: onPressed,
+        color: color,
+        splashColor: splashColor,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12.0),
+          child: Text(
+            title,
+            softWrap: true,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: textColor,
+              decoration: TextDecoration.none,
+              fontSize: fontSize,
+              fontWeight: fontWeight,
+              fontFamily: "OpenSans",
+            ),
+          ),
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0),
+          side: BorderSide(
+            color: borderColor,
+            width: borderWidth,
+          ),
+        ),
+      );
+    }
+
   }
 }

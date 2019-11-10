@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:onboarding_flow/ui/widgets/custom_flat_button.dart';
 import 'package:onboarding_flow/ui/widgets/custom_alert_dialog.dart';
 import 'package:onboarding_flow/models/user.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignInScreen extends StatefulWidget {
   _SignInScreenState createState() => _SignInScreenState();
@@ -126,6 +127,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             borderColor: Color.fromRGBO(212, 20, 15, 1.0),
                             borderWidth: 0,
                             color: Colors.lightBlue,
+                            icon: null,
                           ),
                         ),
                         Padding(
@@ -138,6 +140,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               children: <Widget>[
                                 new Expanded(
                                   child: new Container(
+                                    height: 1,
                                     margin: EdgeInsets.all(8.0),
                                     decoration: BoxDecoration(border: Border.all(width: 0.25), color: Colors.white),
                                   ),
@@ -145,12 +148,13 @@ class _SignInScreenState extends State<SignInScreen> {
                                 Text(
                                   "OR CONNECT WITH",
                                   style: TextStyle(
-                                    color: Colors.white70,
+                                    color: Colors.white,
                                   ),
                                 ),
                                 new Expanded(
                                   child: new Container(
                                     margin: EdgeInsets.all(8.0),
+                                    height: 1,
                                     decoration: BoxDecoration(border: Border.all(width: 0.25), color: Colors.white),
                                   ),
                                 ),
@@ -160,7 +164,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(
-                              vertical: 14.0, horizontal: 40.0),
+                              vertical: 13.0, horizontal: 40.0),
                           child: CustomFlatButton(
                             title: "Facebook Login",
                             fontSize: 22,
@@ -172,6 +176,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             borderColor: Color.fromRGBO(59, 89, 152, 1.0),
                             borderWidth: 0,
                             color: Color.fromRGBO(59, 89, 152, 1.0),
+                            icon: Icon(FontAwesomeIcons.facebookF, color: Colors.white,),
                           ),
                         ),
                       ],
@@ -179,6 +184,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     SafeArea(
                       child: IconButton(
                         icon: Icon(Icons.arrow_back),
+                        color: Colors.white,
                         onPressed: onBackPress,
                       ),
                     ),

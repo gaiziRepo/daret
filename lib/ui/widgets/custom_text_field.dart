@@ -40,7 +40,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         height: 65,
         child: Card(
           elevation: 0.0,
-          color: Colors.transparent,
+          color: Colors.white,
           shape: RoundedRectangleBorder(
             side: BorderSide(color: currentColor, width: 2.0),
             borderRadius: BorderRadius.circular(8.0),

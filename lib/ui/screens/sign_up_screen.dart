@@ -71,9 +71,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
+    return Container(
+        decoration: BoxDecoration(
+        color: Colors.black,
+        image: DecorationImage(
+        image: NetworkImage(
+        'https://coloredbrain.com/wp-content/uploads/2016/07/login-background.jpg',
+    ),
+    fit: BoxFit.cover,
+    // colorFilter: ColorFilter.mode(
+    // Colors.black.withOpacity(0.5), BlendMode.dstATop),
+    ),
+    ),
+    child: WillPopScope(
       onWillPop: onBackPress,
       child: Scaffold(
+        backgroundColor: Colors.transparent,
         body: Stack(
           children: <Widget>[
             Stack(
@@ -82,18 +95,25 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ListView(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(
-                          top: 70.0, bottom: 10.0, left: 10.0, right: 10.0),
+                        padding: EdgeInsets.only(top: 120.0),
+                        child: Container(
+                          height: 120,
+                          width: 150,
+                          child: Image.network(
+                              'https://i0.wp.com/codecollege.co.za/wp-content/uploads/2016/12/kisspng-dart-programming-language-flutter-object-oriented-flutter-logo-5b454ed3d65b91.767530171531268819878.png?fit=550%2C424&ssl=1'),
+                        )
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 35.0, right: 15.0, left: 15.0),
+
                       child: Text(
                         "Create new account",
                         softWrap: true,
-                        textAlign: TextAlign.left,
+                        textAlign: TextAlign.center,
                         style: TextStyle(
-                          color: Color.fromRGBO(212, 20, 15, 1.0),
+                          color: Colors.white,
                           decoration: TextDecoration.none,
                           fontSize: 24.0,
-                          fontWeight: FontWeight.w700,
-                          fontFamily: "OpenSans",
                         ),
                       ),
                     ),
@@ -123,7 +143,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       child: CustomFlatButton(
                         title: "Sign Up",
                         fontSize: 22,
-                        fontWeight: FontWeight.w700,
                         textColor: Colors.white,
                         onPressed: () {
                           _signUp(
@@ -135,7 +154,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         splashColor: Colors.black12,
                         borderColor: Color.fromRGBO(59, 89, 152, 1.0),
                         borderWidth: 0,
-                        color: Color.fromRGBO(59, 89, 152, 1.0),
+                        color: Colors.lightBlue,
                       ),
                     ),
                   ],
@@ -144,6 +163,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: IconButton(
                     icon: Icon(Icons.arrow_back),
                     onPressed: onBackPress,
+                    color: Colors.white,
                   ),
                 ),
               ],
@@ -166,6 +186,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           ],
         ),
       ),
+    )
     );
   }
 
