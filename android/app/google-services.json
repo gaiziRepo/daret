@@ -1,163 +1,37 @@
 {
   "project_info": {
-    "project_number": "706061484183",
-    "firebase_url": "https://ios-app-templates.firebaseio.com",
-    "project_id": "ios-app-templates",
-    "storage_bucket": "ios-app-templates.appspot.com"
+    "project_number": "514014832467",
+    "firebase_url": "https://daret-f2beb.firebaseio.com",
+    "project_id": "daret-f2beb",
+    "storage_bucket": "daret-f2beb.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:706061484183:android:2d2dba50de144d81",
+        "mobilesdk_app_id": "1:514014832467:android:af1c8da7554440a4ffe3a6",
         "android_client_info": {
-          "package_name": "com.instaflutter.onboarding.android"
+          "package_name": "com.gh.daret"
         }
       },
       "oauth_client": [
         {
-          "client_id": "706061484183-l0l58dds4kg329fh1trbiha1ci5rqm5n.apps.googleusercontent.com",
+          "client_id": "514014832467-jmhtp2u4c3mhdr63p465l501cr1cs1sl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDfUhwskZ_-VrNfeJ51o1IawY1DjbWFp-Y"
+          "current_key": "AIzaSyCFGoQQ8vzzhD9rfBwKpLkq3h_N2Ga-a8Y"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:706061484183:android:75277ea79fec2179",
-        "android_client_info": {
-          "package_name": "com.listingapp"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "706061484183-l0l58dds4kg329fh1trbiha1ci5rqm5n.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDfUhwskZ_-VrNfeJ51o1IawY1DjbWFp-Y"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:706061484183:android:36a9299534d1ef8c",
-        "android_client_info": {
-          "package_name": "com.messenger"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "706061484183-l0l58dds4kg329fh1trbiha1ci5rqm5n.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDfUhwskZ_-VrNfeJ51o1IawY1DjbWFp-Y"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:706061484183:android:3f4fa551d34cc26f",
-        "android_client_info": {
-          "package_name": "com.restaurantapp"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "706061484183-l0l58dds4kg329fh1trbiha1ci5rqm5n.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDfUhwskZ_-VrNfeJ51o1IawY1DjbWFp-Y"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:706061484183:android:43820dc9f598d053",
-        "android_client_info": {
-          "package_name": "io.instamobile.rnrealestateapp"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "706061484183-l0l58dds4kg329fh1trbiha1ci5rqm5n.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyDfUhwskZ_-VrNfeJ51o1IawY1DjbWFp-Y"
-        }
-      ],
-      "services": {
-        "analytics_service": {
-          "status": 1
-        },
-        "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514014832467-jmhtp2u4c3mhdr63p465l501cr1cs1sl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }

@@ -35,16 +35,8 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           accentColor: Colors.amberAccent,
           buttonColor: Colors.blue),
-      home: _handleCurrentScreen(),
+      home: new RootScreen(),
     );
   }
 
-  Widget _handleCurrentScreen() {
-    bool seen = (prefs.getBool('seen') ?? false);
-    if (seen) {
-      return new RootScreen();
-    } else {
-      return new WalkthroughScreen(prefs: prefs);
-    }
-  }
 }
