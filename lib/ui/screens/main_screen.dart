@@ -1,7 +1,10 @@
+import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:onboarding_flow/business/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:onboarding_flow/models/user.dart';
+import 'package:onboarding_flow/ui/widgets/custom_flat_button.dart';
 
 class MainScreen extends StatefulWidget {
   final FirebaseUser firebaseUser;
@@ -24,32 +27,8 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      appBar: new AppBar(
-        elevation: 0.5,
-        leading: new IconButton(
-            icon: new Icon(Icons.menu),
-            onPressed: () => _scaffoldKey.currentState.openDrawer()),
-        title: Text("Home"),
-        centerTitle: true,
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: <Widget>[
-            DrawerHeader(
-              child: Text('Drawer Header'),
-            ),
-            ListTile(
-              title: Text('Log Out'),
-              onTap: () {
-                _logOut();
-                _scaffoldKey.currentState.openEndDrawer();
-              },
-            ),
-          ],
-        ),
-      ),
-      body: StreamBuilder(
+        backgroundColor: Color.fromRGBO(248, 245, 244, 1.0),
+        body: StreamBuilder(
         stream: Auth.getUser(widget.firebaseUser.uid),
         builder: (BuildContext context, AsyncSnapshot<User> snapshot) {
           if (!snapshot.hasData) {
@@ -67,23 +46,56 @@ class _MainScreenState extends State<MainScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
                   Container(
-                    height: 100.0,
-                    width: 100.0,
-                    child: CircleAvatar(
-                      backgroundImage: (snapshot.data.profilePictureURL != '')
-                          ? NetworkImage(snapshot.data.profilePictureURL)
-                          : AssetImage("assets/images/default.png"),
+                    height: 400.0,
+                    width: 400.0,
+                    child: Image.asset('assets/images/social_network.gif'),
+                  ),
+                  Text(
+                    "Gérer votre tontine en toute simplicité",
+                    softWrap: true,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.black54,
+                      decoration: TextDecoration.none,
+                      fontSize: 30.0,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.w900,
+                      fontFamily: "OpenSans",
                     ),
                   ),
-                  Text("Name: ${snapshot.data.firstName}"),
-                  Text("Email: ${snapshot.data.email}"),
-                  Text("UID: ${snapshot.data.userID}"),
+              Container(
+                height: 30,
+              ),
+                  CustomFlatButton(
+                    title: "Créer une tontine",
+                    fontSize: 22,
+                    textColor: Colors.white,
+                    onPressed: () {
+                    },
+                    splashColor: Colors.black12,
+                    borderColor: Color.fromRGBO(59, 89, 152, 1.0),
+                    borderWidth: 0,
+                    color: Colors.blue,
+                    icon: Icon(FontAwesomeIcons.plus, color: Colors.white,),
+                  ),
                 ],
               ),
+
             );
           }
         },
       ),
+        bottomNavigationBar: FancyBottomNavigation(
+          tabs: [
+            TabData(iconData: Icons.home, title: "Home"),
+            TabData(iconData: Icons.notifications, title: "Notifications"),
+            TabData(iconData: Icons.person, title: "profile")
+          ],
+          onTabChangedListener: (position) {
+            setState(() {
+            });
+          },
+        )
     );
   }
 
