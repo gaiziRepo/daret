@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import "package:onboarding_flow/ui/screens/walk_screen.dart";
+import 'package:onboarding_flow/ui/screens/add_daret.dart';
 import 'package:onboarding_flow/ui/screens/root_screen.dart';
 import 'package:onboarding_flow/ui/screens/sign_in_screen.dart';
 import 'package:onboarding_flow/ui/screens/sign_up_screen.dart';
@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
         '/root': (BuildContext context) => new RootScreen(),
         '/signin': (BuildContext context) => new SignInScreen(),
         '/signup': (BuildContext context) => new SignUpScreen(),
+        '/add': (BuildContext context) => new addDaretScreen(),
         '/main': (BuildContext context) => new MainScreen(),
       },
       theme: ThemeData(

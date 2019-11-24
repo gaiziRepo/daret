@@ -13,7 +13,7 @@ class _RootScreenState extends State<RootScreen> {
   Widget build(BuildContext context) {
     return new StreamBuilder<FirebaseUser>(
       stream: FirebaseAuth.instance.onAuthStateChanged,
-      builder: (BuildContext context, snapshot) {
+      builder: (BuildContext context,  snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return new Container(
             color: Colors.white,
