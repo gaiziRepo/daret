@@ -1,28 +1,49 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:onboarding_flow/models/user.dart';
 import 'package:flutter/services.dart';
 
 enum authProblems { UserNotFound, PasswordNotValid, NetworkError, UnknownError }
 
-class Auth {
+class Auth with ChangeNotifier {
+  static final FirebaseAuth _auth = FirebaseAuth.instance;
+
   static Future<String> signIn(String email, String password) async {
-    FirebaseUser user = await FirebaseAuth.instance
-        .signInWithEmailAndPassword(email: email, password: password);
+    FirebaseUser user = (await _auth.signInWithEmailAndPassword(email: email, password: password)).user;
     return user.uid;
   }
 
+  ///
+  /// wrapping the firebase call to signInWithEmailAndPassword
+  /// `email` String
+  /// `password` String
+  ///
+  Future<FirebaseUser> loginUser({String email, String password}) async {
+    try {
+      var result = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      // since something changed, let's notify the listeners...
+      notifyListeners();
+      return (await result).user;
+    }  catch (e) {
+      // throw the Firebase AuthException that we caught
+      throw new AuthException(e.code, e.message);
+    }
+  }
+
+
   static Future<String> signInWithFacebok(String accessToken) async {
-    FirebaseUser user = await FirebaseAuth.instance
-        .signInWithFacebook(accessToken: accessToken);
+    final AuthCredential credential = FacebookAuthProvider.getCredential(accessToken: accessToken);
+    final FirebaseUser user = (await _auth.signInWithCredential(credential)).user;
     return user.uid;
   }
 
   static Future<String> signUp(String email, String password) async {
-    FirebaseUser user = await FirebaseAuth.instance
+    AuthResult user = await FirebaseAuth.instance
         .createUserWithEmailAndPassword(email: email, password: password);
-    return user.uid;
+    return user.user.uid;
   }
 
   static Future<void> signOut() async {

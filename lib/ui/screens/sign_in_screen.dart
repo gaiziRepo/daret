@@ -244,7 +244,7 @@ class _SignInScreenState extends State<SignInScreen> {
       _changeBlackVisible();
       FacebookLogin facebookLogin = new FacebookLogin();
       FacebookLoginResult result = await facebookLogin
-          .logInWithReadPermissions(['email', 'public_profile']);
+          .logIn(['email', 'public_profile']);
       switch (result.status) {
         case FacebookLoginStatus.loggedIn:
           Auth.signInWithFacebok(result.accessToken.token).then((uid) {
