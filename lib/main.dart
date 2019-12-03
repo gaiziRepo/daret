@@ -33,9 +33,9 @@ class MyApp extends StatelessWidget {
       },
       theme: ThemeData(
           brightness: Brightness.light,
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.teal,
           accentColor: Colors.amberAccent,
-          buttonColor: Colors.blue),
+          buttonColor: Colors.teal),
       home: new RootScreen(),
     );
   }

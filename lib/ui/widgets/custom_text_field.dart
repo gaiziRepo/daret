@@ -10,6 +10,9 @@ class CustomTextField extends StatefulWidget {
   final bool obscureText;
   final Function validator;
   final Function onChanged;
+  final Function onTap;
+  final double height;
+  final double verticalPad;
 
   CustomTextField(
       {this.hint,
@@ -20,7 +23,10 @@ class CustomTextField extends StatefulWidget {
       this.errorColor,
       this.inputType = TextInputType.text,
       this.obscureText = false,
-      this.validator});
+      this.validator,
+      this.onTap,
+      this.height = 65,
+      this.verticalPad = 6});
 
   _CustomTextFieldState createState() => _CustomTextFieldState();
 }
@@ -37,7 +43,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 65,
+        height: widget.height,
         child: Card(
           elevation: 0.0,
           color: Colors.white70,
@@ -46,8 +52,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
             borderRadius: BorderRadius.circular(8.0),
           ),
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 6),
+            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: widget.verticalPad),
             child: TextField(
+              onTap: widget.onTap,
               obscureText: widget.obscureText,
               onChanged: (text) {
                 if (widget.onChanged != null) {
@@ -61,7 +68,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                   }
                 });
               },
-              //keyboardType: widget.inputType,
+              keyboardType: widget.inputType,
               controller: widget.controller,
               decoration: InputDecoration(
                 hintStyle: TextStyle(
